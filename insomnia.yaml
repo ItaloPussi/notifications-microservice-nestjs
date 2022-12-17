@@ -1,0 +1,198 @@
+_type: export
+__export_format: 4
+__export_date: 2022-12-17T16:27:33.498Z
+__export_source: insomnia.desktop.app:v2022.7.0
+resources:
+  - _id: req_3ea95da80ccf485ab293fe7fc5817971
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290238751
+    created: 1670892431575
+    url: "{{ _.baseURL }}"
+    name: Create a Notification
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"recipientId": "{% uuid 'v4' %}",
+        	"content": "You have a new friendship request!",
+        	"category": "social"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1671246308887
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_da1a6236f63f4256b9e65922d3bb9611
+    parentId: null
+    modified: 1671290328430
+    created: 1670892407787
+    name: Notifications Microservice Collection - Ignite Lab NodeJS
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_5623372ac873442ea750d973e126ec2b
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290177423
+    created: 1671246509254
+    url: "{{ _.baseURL }}/{% response 'body',
+      'req_3ea95da80ccf485ab293fe7fc5817971',
+      'b64::JC5ub3RpZmljYXRpb24uaWQ=::46b', 'no-history', 60 %}/cancel"
+    name: Cancel a notification
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671246308862
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9f848ec1bac1448489f0695947a56d2b
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290172741
+    created: 1671246308837
+    url: "{{ _.baseURL }}/{% response 'body',
+      'req_3ea95da80ccf485ab293fe7fc5817971',
+      'b64::JC5ub3RpZmljYXRpb24uaWQ=::46b', 'no-history', 60 %}/read"
+    name: Read a notification
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671246308837
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ec07c7c9522344648189d3f33ac1fbdf
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290168472
+    created: 1671246461662
+    url: "{{ _.baseURL }}/{% response 'body',
+      'req_3ea95da80ccf485ab293fe7fc5817971',
+      'b64::JC5ub3RpZmljYXRpb24uaWQ=::46b', 'no-history', 60 %}/unread"
+    name: Unread a notification
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671069360192.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_514c8b3715c34c8084c94192fc9c2eab
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290161754
+    created: 1670892411548
+    url: "{{ _.baseURL }}/get/from/{% response 'body',
+      'req_3ea95da80ccf485ab293fe7fc5817971',
+      'b64::JC5ub3RpZmljYXRpb24ucmVjaXBpZW50SWQ=::46b', 'no-history', 60 %}"
+    name: List Notifications to recipient
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1670892411548
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5205d5bc0ced41e68fb6571dbaba59b4
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290153018
+    created: 1671246600074
+    url: "{{ _.baseURL }}/count/from/{% response 'body',
+      'req_3ea95da80ccf485ab293fe7fc5817971',
+      'b64::JC5ub3RpZmljYXRpb24ucmVjaXBpZW50SWQ=::46b', 'no-history', 60 %}"
+    name: Count notifications to recipient
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1669771843476.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_adf19b57559d9bea74c2b5b7df8ad0a1cba191ab
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1671290147735
+    created: 1670892407804
+    name: Base Environment
+    data:
+      baseURL: http://localhost:3000/notifications
+    dataPropertyOrder:
+      "&":
+        - baseURL
+    color: null
+    isPrivate: false
+    metaSortKey: 1670892407804
+    _type: environment
+  - _id: jar_adf19b57559d9bea74c2b5b7df8ad0a1cba191ab
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1670892407808
+    created: 1670892407808
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_5a9fe8752ed6497c9d58d825a62f4d26
+    parentId: wrk_da1a6236f63f4256b9e65922d3bb9611
+    modified: 1670892407795
+    created: 1670892407795
+    fileName: Ignite Lab NodeJS
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_fbc14ee2094c4e63bc64d3d374232a66
+    parentId: env_adf19b57559d9bea74c2b5b7df8ad0a1cba191ab
+    modified: 1671290136382
+    created: 1671290136382
+    name: New Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1671290136382
+    _type: environment
